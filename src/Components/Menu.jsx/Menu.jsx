@@ -47,6 +47,7 @@ const Menu = () => {
         <MenuCategory
           items={soup}
           title={"soup"}
+          className="h-75"
           img="https://images.pexels.com/photos/5865282/pexels-photo-5865282.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         ></MenuCategory>
       </div>
