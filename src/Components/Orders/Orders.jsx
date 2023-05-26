@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useMenu from "../../Hooks/useMenu";
 import { Helmet } from "react-helmet-async";
+import Cover from "../Shared/Cover";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import OrderTab from "./OrderTab";
+import "react-tabs/style/react-tabs.css";
 
 const Orders = () => {
   const categories = ["salad", "pizza", "soup", "dessert", "drinks"];
@@ -21,8 +25,15 @@ const Orders = () => {
         <title>Bistro Boss | Order Food</title>
       </Helmet>
 
-      <Cover img={orderCoverImg} title="Order Food"></Cover>
-      <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+      <Cover
+        img="https://images.pexels.com/photos/4551619/pexels-photo-4551619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        title="Order Food"
+      ></Cover>
+      <Tabs
+        className="text-center mt-10 mb-10 text-lg font-semibold text-yellow-500"
+        defaultIndex={tabIndex}
+        onSelect={(index) => setTabIndex(index)}
+      >
         <TabList>
           <Tab>Salad</Tab>
           <Tab>Pizza</Tab>
