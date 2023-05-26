@@ -4,10 +4,10 @@ import SectionTitle from "./SectionTitle";
 const Featured = () => {
   return (
     <div
-      className="featured-item bg-fixed text-white pt-8 my-20"
+      className="featured-item bg-fixed bg-cover text-white pt-8 my-20"
       style={{
         backgroundImage:
-          "url(https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
+          "url(https://images.unsplash.com/photo-1447078806655-40579c2520d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80)",
       }}
     >
       <SectionTitle
