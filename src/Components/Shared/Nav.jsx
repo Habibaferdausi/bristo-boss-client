@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../Auth Provider/AuthProvider";
 
 const Nav = () => {
@@ -27,13 +28,24 @@ const Nav = () => {
       <li>
         <NavLink to="/secret">Secret</NavLink>
       </li>
+      <li>
+        <Link to="/dashboard/mycart">
+          <button className="btn gap-2">
+            <FaShoppingCart></FaShoppingCart>
+            <div className="badge badge-secondary"></div>
+          </button>
+        </Link>
+      </li>
       {user ? (
-        <>
+        <div className="">
           <span>{user?.displayName}</span>
+
+          <img src={user?.photoURL} className="btn btn-ghost rounded-full" />
+
           <button onClick={handleLogOut} className="btn btn-ghost">
             LogOut
           </button>
-        </>
+        </div>
       ) : (
         <>
           <li>
@@ -76,9 +88,6 @@ const Nav = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
-        </div>
-        <div className="navbar-end">
-          <a className="btn">Get started</a>
         </div>
       </div>
     </>
