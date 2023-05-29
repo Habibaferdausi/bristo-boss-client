@@ -7,6 +7,7 @@ import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import PrivetRouter from "./PrivetRouter";
 import Secret from "../Components/Secret/Secret";
+import DashBoard from "../Components/layout/DashBoard";
 
 export const router = createBrowserRouter([
   {
@@ -42,5 +43,10 @@ export const router = createBrowserRouter([
   {
     path: "signup",
     element: <Register></Register>,
+  },
+  {
+    path: "dashboard",
+    element: <DashBoard></DashBoard>,
+    children: [],
   },
 ]);
