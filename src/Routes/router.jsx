@@ -8,6 +8,7 @@ import Register from "../Components/Register/Register";
 import PrivetRouter from "./PrivetRouter";
 import Secret from "../Components/Secret/Secret";
 import DashBoard from "../Components/layout/DashBoard";
+import MyCart from "../Components/Dashboard/MyCart";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,11 @@ export const router = createBrowserRouter([
   {
     path: "dashboard",
     element: <DashBoard></DashBoard>,
-    children: [],
+    children: [
+      {
+        path: "mycart",
+        element: <MyCart></MyCart>,
+      },
+    ],
   },
 ]);
