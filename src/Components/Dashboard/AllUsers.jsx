@@ -3,6 +3,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { FaTrashAlt, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const AllUsers = () => {
   const [axiosSecure] = useAxiosSecure();
