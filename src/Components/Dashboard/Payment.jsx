@@ -3,8 +3,9 @@ import useCart from "../../Hooks/useCart";
 import SectionTitle from "../Home/SectionTitle";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
+import { loadStripe } from "@stripe/stripe-js";
 
-//const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
+const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 
 const Payment = () => {
   const [cart] = useCart();
