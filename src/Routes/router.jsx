@@ -9,6 +9,9 @@ import PrivetRouter from "./PrivetRouter";
 import Secret from "../Components/Secret/Secret";
 import DashBoard from "../Components/layout/DashBoard";
 import MyCart from "../Components/Dashboard/MyCart";
+import AllUsers from "../Components/Dashboard/AllUsers";
+import AddItem from "../Components/Dashboard/AddItem";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
   {
@@ -55,6 +58,19 @@ export const router = createBrowserRouter([
           <PrivetRouter>
             <MyCart></MyCart>
           </PrivetRouter>
+        ),
+      },
+
+      {
+        path: "allUsers",
+        element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "addItem",
+        element: (
+          <AdminRoute>
+            <AddItem></AddItem>
+          </AdminRoute>
         ),
       },
     ],
