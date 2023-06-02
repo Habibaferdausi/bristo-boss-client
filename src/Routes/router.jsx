@@ -13,6 +13,7 @@ import AllUsers from "../Components/Dashboard/AllUsers";
 import AddItem from "../Components/Dashboard/AddItem";
 import AdminRoute from "./AdminRoute";
 import ManageItem from "../Components/Dashboard/ManageItem";
+import Payment from "../Components/Dashboard/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ export const router = createBrowserRouter([
       {
         path: "allUsers",
         element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
       },
       {
         path: "addItem",
