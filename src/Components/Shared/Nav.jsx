@@ -19,14 +19,16 @@ const Nav = () => {
   const navOptions = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <NavLink to="/">Home</NavLink>
+      </li>
+
+      <li>
+        <NavLink to="menu">Menu</NavLink>
       </li>
       <li>
-        <Link to="/menu">Our Menu</Link>
+        <NavLink to="/order/salad">Order</NavLink>
       </li>
-      <li>
-        <Link to="/order/salad">Order Food</Link>
-      </li>
+
       {isAdmin ? (
         <li>
           <Link to="/dashboard/adminhome">Dashboard</Link>
@@ -45,15 +47,19 @@ const Nav = () => {
         </Link>
       </li>
       {user ? (
-        <>
+        <div className="">
+          <span>{user?.displayName}</span>
+
+          <img src={user?.photoURL} className="btn btn-ghost rounded-full" />
+
           <button onClick={handleLogOut} className="btn btn-ghost">
             LogOut
           </button>
-        </>
+        </div>
       ) : (
         <>
           <li>
-            <Link to="/login">Login</Link>
+            <NavLink to="/login">Login</NavLink>
           </li>
         </>
       )}
@@ -92,9 +98,6 @@ const Nav = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
-        </div>
-        <div className="navbar-end">
-          <a className="btn">Get started</a>
         </div>
       </div>
     </>
