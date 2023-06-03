@@ -2,6 +2,18 @@ import React from "react";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
+import {
+  BarChart,
+  Bar,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  PieChart,
+  Pie,
+  ResponsiveContainer,
+  Legend,
+} from "recharts";
 
 const AdminHome = () => {
   const { user } = useAuth();
