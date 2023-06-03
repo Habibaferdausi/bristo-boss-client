@@ -3,10 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../Auth Provider/AuthProvider";
 import useCart from "../../Hooks/useCart";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
   const [cart] = useCart();
+  const [isAdmin] = useAdmin();
 
   const handleLogOut = () => {
     logOut()
@@ -17,19 +19,23 @@ const Nav = () => {
   const navOptions = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-
-      <li>
-        <NavLink to="menu">Menu</NavLink>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <NavLink to="/order/salad">Order</NavLink>
+        <Link to="/menu">Our Menu</Link>
       </li>
-
       <li>
-        <NavLink to="/secret">Secret</NavLink>
+        <Link to="/order/salad">Order Food</Link>
       </li>
+      {isAdmin ? (
+        <li>
+          <Link to="/dashboard/adminhome">Dashboard</Link>
+        </li>
+      ) : (
+        <li>
+          <Link to="/dashboard/userhome">Dashboard</Link>
+        </li>
+      )}
       <li>
         <Link to="/dashboard/mycart">
           <button className="btn gap-2">
@@ -39,19 +45,15 @@ const Nav = () => {
         </Link>
       </li>
       {user ? (
-        <div className="">
-          <span>{user?.displayName}</span>
-
-          <img src={user?.photoURL} className="btn btn-ghost rounded-full" />
-
+        <>
           <button onClick={handleLogOut} className="btn btn-ghost">
             LogOut
           </button>
-        </div>
+        </>
       ) : (
         <>
           <li>
-            <NavLink to="/login">Login</NavLink>
+            <Link to="/login">Login</Link>
           </li>
         </>
       )}
@@ -90,6 +92,9 @@ const Nav = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
+        </div>
+        <div className="navbar-end">
+          <a className="btn">Get started</a>
         </div>
       </div>
     </>
